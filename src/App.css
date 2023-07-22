@@ -124,13 +124,11 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.empty h2 {
   font-size: 1.25rem;
   color: #f9d3b4;
   font-family: var(--font-raleway);
 }
+
 
 .container {
   width: 100%;
@@ -220,7 +218,7 @@ a {
 }
 
 @media screen and (max-width: 600px) {
-  .app {
+  .home {
     padding: 4rem 2rem;
   }
 
@@ -240,7 +238,7 @@ a {
 }
 
 @media screen and (max-width: 400px) {
-  .app {
+  .home {
     padding: 4rem 1rem;
   }
 

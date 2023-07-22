@@ -1,10 +1,12 @@
-import React from 'react'
+import { useState } from 'react'
 
 const Popular = () => {
   return (
-    <div className='popular'>
+    <>
+      <div className='popular'>
         <h1>Top 10 Movies</h1>
-    </div>
+      </div>
+    </>
   )
 }
 
