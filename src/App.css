@@ -255,3 +255,58 @@ a {
     margin: 1rem;
   }
 }
+
+.movie-details{
+  padding: 3rem 5rem;
+  font-family: 'Roboto Slab', serif;
+  /* display: inline-block; */
+  
+}
+
+.single-movie{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.info{
+  word-spacing: 3px;
+  padding: 0rem 2rem;
+  margin: 2px 0px;
+}
+
+.info h1{
+  color: #f9d3b4;
+  margin-top: 0.5rem;
+}
+
+.info span{
+  opacity: 0.6;
+  margin-right: 6px;
+}
+
+.poster img{
+  border: 3px solid #f9d3b4;
+  margin-right: 2rem;
+}
+
+.info p{
+  margin: 1.5em 0rem;
+}
+
+.genre{
+  background-color: #656262;
+  border-radius: 2px;
+  /* color: #f9d3b4; */
+}
+
+@media screen and (max-width: 600px) {
+  .single-movie{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .info h1{
+    margin-top: 2rem;
+  }
+}

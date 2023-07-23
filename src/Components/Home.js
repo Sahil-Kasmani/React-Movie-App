@@ -20,7 +20,7 @@ const Home = () => {
     const [searchTerm, setSearch] = useState('');
     const [load, setLoad] = useState(true);
     const [notFound, setNotFound] = useState(false);
-    const [error,setError] = useState('');
+    const [error, setError] = useState('');
 
     const searchMovies = (title) => {
         fetch(`${API_URL}&s=${title}`)
@@ -41,13 +41,13 @@ const Home = () => {
     }
 
     useEffect(() => {
-        searchMovies('Avengers');
+        searchMovies('Dark-Knight');
     }, [])
 
 
     return (
         <div className='home'>
-            <h1>Movie-Land</h1>
+            <h1>Movie-Space</h1>
 
             <div className="search">
                 <input
@@ -60,12 +60,12 @@ const Home = () => {
 
             {load && <h2 style={{ color: "#f9d3b4" }}>Loading...</h2>}
             {movies && movies.length > 0 ? (
-                <MovieCard movies={movies} key={movies.imdbID}/>
+                <MovieCard movies={movies} key={movies.imdbID} />
             ) : (
                 notFound && <h2 className='empty'>No movie Found!</h2>
             )
             }
-            {error && <div style={{color: "red",fontSize: "2rem"}}>{error}</div>}
+            {error && <div style={{ color: "red", fontSize: "2rem" }}>{error}</div>}
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movies }) => {
+const MovieCard = ({ movies,searchTerm }) => {
     return (
         <div className="container">
             {movies.map((movie) => (
