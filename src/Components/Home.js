@@ -33,7 +33,7 @@ const Home = () => {
                 setLoad(false);
                 setNotFound(true);
             })
-            .catch((err)=>{
+            .catch((err) => {
                 console.log(err.message);
                 setError(err.message)
                 setLoad(false);
