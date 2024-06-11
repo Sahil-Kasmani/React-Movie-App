@@ -1,63 +1,23 @@
-import { useEffect, useState } from 'react';
-import Search from './search.svg';
 import './App.css';
-import MovieCard from './MovieCard';
-
-
-const API_URL = 'https://www.omdbapi.com?apikey=e35bc2b';
-
-const movie1 = {
-    "Title": "Spiderman",
-    "Year": "1990",
-    "imdbID": "tt0100669",
-    "Type": "movie",
-    "Poster": "N/A"
-}
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+import Popular from './Components/Popular';
+import MovieDeta from './Components/MovieDeta';
 
 const App = () => {
-    const [movies, setMovies] = useState([]);
-    const [searchTerm, setSearch] = useState('');
-
-    const searchMovies = async (title) => {
-        const response = await fetch(`${API_URL}&s=${title}`)
-        const data = await response.json();
-
-        setMovies(data.Search);
-    }
-
-    useEffect(() => {
-        searchMovies('after');
-    }, [])
-
     return (
-        <div className='app'>
-            <h1>Movie-Land</h1>
-
-            <div className="search">
-                <input
-                    placeholder='Search for movies'
-                    value={searchTerm}
-                    onChange={(e) => {setSearch(e.target.value) }}
-                />
-                <img
-                    src={Search} alt="search" onClick={() => {searchMovies(searchTerm) }} />
+        <Router>
+            <div className='app'>
+                <Navbar />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/Popular' element={<Popular />} />
+                    <Route path='/movie/:imdbID' element={<MovieDeta />} />
+                </Routes>
             </div>
-
-            {
-                movies.length > 0 ? (
-                    <div className="container">
-                        {movies.map((movie)=>(
-                            <MovieCard movie={movie} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="empty">
-                        <h2>No Movies Found!</h2>
-                    </div>
-                )
-            }
-        </div>
+        </Router>
     )
 }
 
-export default App
+export default App;
